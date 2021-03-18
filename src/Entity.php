@@ -23,7 +23,8 @@ class Entity implements EntityInterface {
 	/**
 	 * @inheritDoc
 	 */
-	public static function getConstants(): array {
+	public static function getConstants(): array
+	{
 		$reflectionClass = new ReflectionClass(__CLASS__);
 		
 		return $reflectionClass->getConstants();
