@@ -1,0 +1,28 @@
+{
+    "name": "mepihindeveloper/php-data-entities",
+    "description": "Component for working with constant control mechanisms",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "component",
+        "class",
+        "php",
+        "entities"
+    ],
+    "authors": [
+        {
+            "name": "mepihindeveloper",
+            "email": "mepihindeveloper@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "mepihindeveloper\\components\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
