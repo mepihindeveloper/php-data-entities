@@ -23,8 +23,7 @@ class Entity implements EntityInterface {
 	/**
 	 * @inheritDoc
 	 */
-	public static function getConstants(): array
-	{
+	public static function getConstants(): array {
 		$reflectionClass = new ReflectionClass(__CLASS__);
 		
 		return $reflectionClass->getConstants();
@@ -33,10 +32,8 @@ class Entity implements EntityInterface {
 	/**
 	 * @inheritDoc
 	 */
-	public static function getMapValueByKey(string $key)
-	{
-		if (!self::has($key))
-		{
+	public static function getMapValueByKey(string $key) {
+		if (!self::has($key)) {
 			throw new InvalidArgumentException("Ключ {$key} отсутствует.");
 		}
 		
@@ -46,26 +43,22 @@ class Entity implements EntityInterface {
 	/**
 	 * @inheritDoc
 	 */
-	public static function getMap(string $key = ''): array
-	{
-		if (empty($key))
-		{
-			return self::$map;
-		}
-		
-		if (!self::has($key))
-		{
-			throw new InvalidArgumentException("Ключ {$key} отсутствует.");
-		}
-		
-		return [$key => self::$map[$key]];
+	public static function has(string $key): bool {
+		return array_key_exists($key, self::$map);
 	}
 	
 	/**
 	 * @inheritDoc
 	 */
-	public static function has(string $key): bool
-	{
-		return array_key_exists($key, self::$map);
+	public static function getMap(string $key = ''): array {
+		if (empty($key)) {
+			return self::$map;
+		}
+		
+		if (!self::has($key)) {
+			throw new InvalidArgumentException("Ключ {$key} отсутствует.");
+		}
+		
+		return [$key => self::$map[$key]];
 	}
 }
