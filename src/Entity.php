@@ -37,14 +37,14 @@ class Entity implements EntityInterface {
 			throw new InvalidArgumentException("Ключ {$key} отсутствует.");
 		}
 		
-		return self::$map[$key];
+		return static::$map[$key];
 	}
 	
 	/**
 	 * @inheritDoc
 	 */
 	public static function has(string $key): bool {
-		return array_key_exists($key, self::$map);
+		return array_key_exists($key, static::$map);
 	}
 	
 	/**
@@ -52,13 +52,13 @@ class Entity implements EntityInterface {
 	 */
 	public static function getMap(string $key = ''): array {
 		if (empty($key)) {
-			return self::$map;
+			return static::$map;
 		}
 		
 		if (!self::has($key)) {
 			throw new InvalidArgumentException("Ключ {$key} отсутствует.");
 		}
 		
-		return [$key => self::$map[$key]];
+		return [$key => static::$map[$key]];
 	}
 }
