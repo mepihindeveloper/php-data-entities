@@ -42,7 +42,7 @@ class EntityTest extends Unit {
 		$this->assertSame($this->mapValues, $this->entity::getMap($key));
 	}
 	
-	public function testGetMapWithKeyWithException(string $key) {
+	public function testGetMapWithKeyWithException() {
 		$key = 'b';
 		$this->expectException(InvalidArgumentException::class);
 		$this->entity::getMap($key);
@@ -55,7 +55,7 @@ class EntityTest extends Unit {
 		$this->assertSame('aa', $this->entity::getMapValueByKey($key));
 	}
 	
-	public function testGetMapValueByKeyWithException(string $key) {
+	public function testGetMapValueByKeyWithException() {
 		$key = 'b';
 		$this->expectException(InvalidArgumentException::class);
 		$this->entity::getMapValueByKey($key);
