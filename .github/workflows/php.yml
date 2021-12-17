@@ -34,7 +34,9 @@ jobs:
       run: composer install --prefer-dist --no-progress
     - name: Run unit tests
       run: php vendor/bin/codecept run unit
+    - name: Run Codecept coverage
+      run: php vendor/bin/codecept run --coverage coverage.xml
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
-        token: d9082c20-f6be-4a83-8475-d459abd8f7d5
+        token: ${{ secrets.CODECOV_TOKEN }}
