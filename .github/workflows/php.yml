@@ -37,8 +37,9 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-php-
+          
     - name: Install dependencies with Composer
-      uses: ramsey/composer-install@v1.3.0
+      uses: ramsey/composer-install@v1
       with:
         composer-options: "--ignore-platform-reqs"
 
