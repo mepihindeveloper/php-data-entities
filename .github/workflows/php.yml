@@ -40,8 +40,6 @@ jobs:
           
     - name: Install dependencies with Composer
       uses: ramsey/composer-install@v1
-      with:
-        composer-options: "---prefer-dist --no-progres"
         
     - name: Run unit tests
       run: php vendor/bin/codecept run unit
