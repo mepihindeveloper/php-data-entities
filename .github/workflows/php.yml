@@ -8,15 +8,23 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
     strategy:
       max-parallel: 2
+      fail-fast: false
       matrix:
         php-version: [7.4, 8.0]
+        experimental: [false]
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Setup PHP Action
+      uses: shivammathur/setup-php@2.16.0
+      with:
+        php-version: ${{ matrix.php }}
+        coverage: xdebug
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
