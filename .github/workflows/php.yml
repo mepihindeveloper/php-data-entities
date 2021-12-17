@@ -45,7 +45,7 @@ jobs:
       run: php vendor/bin/codecept run unit
       
     - name: Run Codecept coverage
-      run: php vendor/bin/codecept run --coverage --coverage-xml
+      run: php vendor/bin/codecept run --coverage --coverage-xml --coverage-phpunit
       
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
