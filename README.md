@@ -3,6 +3,7 @@
 ![release](https://img.shields.io/github/v/release/mepihindeveloper/php-data-entities?label=version)
 ![license](https://img.shields.io/github/license/mepihindeveloper/php-data-entities)
 ![build](https://github.com/mepihindeveloper/php-data-entities/actions/workflows/php.yml/badge.svg?branch=development)
+[![codecov](https://codecov.io/gh/mepihindeveloper/php-data-entities/branch/development/graph/badge.svg?token=36PP7VKHKG)](https://codecov.io/gh/mepihindeveloper/php-data-entities)
 
 Компонент для работы с пользовательскими константами в PHP. Данный компонент помогает оперировать константами и их
 представлениями.
