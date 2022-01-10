@@ -16,7 +16,8 @@ jobs:
       matrix:
         php: [7.4, 8.0]
         experimental: [false]
-        analysis: true
+        include:
+          analysis: true
 
     steps:
     - uses: actions/checkout@v2
