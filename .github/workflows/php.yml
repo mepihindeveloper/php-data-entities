@@ -55,3 +55,7 @@ jobs:
       with:
         files: ./tests/_output/coverage.xml
         verbose: true
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Codecov Action
+      uses: Atrox/codecov-action@v0.1.3
