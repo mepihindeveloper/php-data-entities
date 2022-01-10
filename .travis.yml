@@ -1,0 +1,7 @@
+language: php
+
+script:
+  - vendor/bin/codecept run --coverage --coverage-xml --coverage-phpunit
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
